@@ -91,3 +91,11 @@ input[type=number]::-webkit-outer-spin-button{
   -webkit-appearance: none;
 }
 
+
+form select {
+  padding: 15px;
+  padding-right: 665px;
+  border-radius: 20px;
+  border: 1px solid gray;
+}
+
