@@ -66,4 +66,28 @@ form {
   max-width: 800px;
 }
 
+form div {
+  padding-top: 3px;
+  padding-bottom: 30px;
+  line-height: 2;
+}
+
+form p {
+  font-size: 25px;
+  color: rgb(54, 53, 53);
+  font-weight: 500;
+}
+
+form input {
+  padding: 15px;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid gray;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+}
 
