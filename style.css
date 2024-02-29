@@ -1,0 +1,17 @@
+*{
+ max-width: 1200px;
+ margin: auto;
+ padding: auto;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+.texts{
+ display: flex;
+ justify-content: space-between;
+ width: 100%;
+ line-height: 1.5;
+ margin-top: 100px;
+}
+
+
+
