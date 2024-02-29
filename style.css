@@ -99,6 +99,10 @@ form select {
   border: 1px solid gray;
 }
 
+#preferredCounsellor {
+  padding-right: 720px;
+}
+
 
 form button {
  display: flex;
