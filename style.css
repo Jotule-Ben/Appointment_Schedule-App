@@ -13,5 +13,27 @@
  margin-top: 100px;
 }
 
+.texts h1{
+ font-size: 60px;
+ padding-bottom: 10px;
+}
 
+.texts span{
+ color: rgb(32, 32, 223);
+}
+
+.texts p{
+ font-size: 25px;
+ padding-bottom: 30px;
+}
+
+.button{
+ font-size: 20px;
+ padding: 15px;
+ background-color: rgb(32, 32, 223);
+ border: 1px solid rgb(32, 32, 223);
+ border-radius: 10px;
+ color: white;
+ cursor: pointer;
+}
 
