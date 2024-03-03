@@ -99,8 +99,8 @@ form select {
   border: 1px solid gray;
 }
 
-#preferredCounsellor {
-  padding-right: 720px;
+#preferredCounsellor select {
+  padding-right: 700px;
 }
 
 
@@ -118,5 +118,10 @@ form button {
   color: #fff;
   cursor: pointer;
   border-radius: 20px;
+}
+
+textarea{
+  width: 830px;
+  margin-bottom: 10px;
 }
 
