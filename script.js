@@ -203,22 +203,49 @@ function confirm() {
   checkAppointmentTime();
   checkNote();
 
-  for (let i = 0; i < counsellorArr.length; i++) {
-    const element = counsellorArr.numOfSelect[i];
-    console.log(element);
+  // if (schedulePrice.includes(selectOpt.value)) {
+  //   console.log(schedulePrice, selectOpt.value);
+  // }
+
+  for (let key in schedulePrice) {
+    console.log(key + ": " + schedulePrice[key]);
+    // if (selectOpt.value == key){
+    if (key.includes(selectOpt.value)) {
+      console.log("correct!");
+      // console.log(selectOpt.value);
+    } else {
+      console.log(selectOpt.value);
+    }
+    // console.log("correct!");
   }
 
-  if (counsellorArr.numOfSelect >= 3) {
-    lastPage.innerHTML = `schedulePrice`;
-    console.log(counsellorArr);
-  } else {
-    console.log(schedulePrice.career);
-    // window.location.href = 'index.html';
-    // lastPage.innerHTML = `schedulePrice`;
-    console.log(lastPage);
+  let successNote = `Your appointment with ${validateSelectedOption.value} has been succesfully scheduled to be by ${customerDateOfAppointment.value} ${customerTimeOfAppointment.value}.Your Schedule session costs ${schedulePrice}`;
+
+  console.log(successNote);
+
+  if (counsellorArr.numOfSelect <= 3) {
+    console.log(successNote);
   }
-  console.log(schedulePrice.career);
-  console.log(selectOpt.value);
+  // else if(all (counsellorArr.numOfSelect <= 3)){
+  //   console.log("No Counsellor is available for now, \ntry again later!");
+  // }
+  else if (counsellorArr.numOfSelect <= 3) {
+    console.log("No available slots for now!");
+  }
+
+  // if (counsellorArr.numOfSelect >= 3) {
+  //   lastPage.addClassList = "successful";
+  //   lastPage.textContent = `Your appointment with ${selectOpt.value}has been succesfully scheduled. By ${customerDateOfAppointment.value , customerTimeOfAppointment}. Your Schedule session costs ${schedulePrice}`;
+
+  //   console.log(counsellorArr);
+  //   console.log(lastPage.textContent);
+  // } else {
+  //   console.log(schedulePrice.career);
+  //   // window.location.href = 'index.html';
+  //   // lastPage.innerHTML = `schedulePrice`;
+  // }
+  // console.log(schedulePrice.career);
+  // console.log(selectOpt.value);
 }
 
 // for (const price of schedulePrice.length) {
@@ -226,5 +253,5 @@ function confirm() {
 // }
 
 // console.log(schedulePrice["Change of profession"]);
-console.log(schedulePrice.career);
-console.log(selectOpt.textContent);
+// console.log(schedulePrice.career);
+// console.log(selectOpt.textContent);
