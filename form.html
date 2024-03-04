@@ -40,39 +40,36 @@
         <input type="text" placeholder="Contact Address" id="address" />
       </div>
 
-      <div>
+      <div id="consultationpurpose">
         <label for="">Select your purpose of consultation</label>
-        <select name="" id="consultationpurpose">
-<option value=""></option>
-<option value="3">Career</option>
-<option value="2">Growth</option>
-<option value="1">Change of Profession</option>
-<option value="0">Others</option>
+        <select name="" id="consult">
+          <option value="">Select an option</option>
         </select>
       </div>
 
-      <div>
+      <div id="preferredCounsellor">
         <label for="">Select your preferred Counsellor</label>
-        <select name="" id="preferredCounsellor">
-<option value=""></option>
-<option value="3">Counsellor 1</option>
-<option value="2">Counsellor 2</option>
-<option value="1">Counsellor 3</option>
-<option value="0">Others</option>
+        <select name="" id="selectOption">
+          <option value="">select an option</option>
         </select>
       </div>
 
       <div>
-<label for="">Choose date of appointment</label>
-<input type="date" id="appointmentDate">
+        <label for="">Choose date of appointment</label>
+        <input type="date" id="appointmentDate" />
       </div>
 
       <div>
-<label for="">Choose time of appointment</label>
-<input type="time" id="appointmentTime">
+        <label for="">Choose time of appointment</label>
+        <input type="time" id="appointmentTime" />
       </div>
 
-      <button>Schedule an Appointment</button>
+      <div>
+        <label for="">Enter a brief note.</label>
+        <textarea name="" id="briefnote" cols="30" rows="10"></textarea>
+      </div>
+
+      <button type="button" onclick="confirm()">Schedule an Appointment</button>
     </form>
 
     <script src="script.js"></script>
