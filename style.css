@@ -125,3 +125,11 @@ textarea{
   margin-bottom: 10px;
 }
 
+#main{
+  max-width: 1000px;
+  margin:auto;
+  display: flex;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 200px;
+}
