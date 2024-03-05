@@ -52,8 +52,8 @@ let consultationPurpose = [
 ];
 
 const schedulePrice = {
-  health: "30000",
-  career: "50000",
+  Health: "30000",
+  Career: "50000",
   Growth: "40000",
   "Change of profession": "60000",
   Business: "80000",
@@ -65,7 +65,7 @@ function checkName() {
   let input = customerName.value;
   if (input === "") {
     customerName.style.borderColor = "red";
-  } else {
+    return false;
   }
 }
 
@@ -73,7 +73,7 @@ function checkNumber() {
   let input = customerPhoneNumber.value;
   if (input === "") {
     customerPhoneNumber.style.borderColor = "red";
-  } else {
+    return false;
   }
 }
 
@@ -81,7 +81,7 @@ function checkEmail() {
   let input = customerEmail.value;
   if (input === "") {
     customerEmail.style.borderColor = "red";
-  } else {
+    return false;
   }
 }
 
@@ -89,7 +89,7 @@ function checkAddress() {
   let input = customerAddress.value;
   if (input === "") {
     customerAddress.style.borderColor = "red";
-  } else {
+    return false;
   }
 }
 
@@ -109,6 +109,7 @@ function consultPurpose() {
       optionselected[e.target.id] = e.target.value;
       if (e.target.value == "") {
         selectOpt.style.borderColor = "red";
+        return false;
       }
     });
   });
@@ -119,6 +120,7 @@ consultPurpose();
 function handleconsultValidation() {
   if (selectOpt.value == "") {
     selectOpt.style.borderColor = "red";
+    return false;
   }
 }
 
@@ -137,7 +139,7 @@ function preferredCounsellor() {
     customerSelectedOption = e.target.value;
 
     if (customerSelectedOption == "") {
-      return;
+      return false;
     } else {
       let options = customerOption.querySelectorAll("option");
 
@@ -172,7 +174,7 @@ function checkAppointmentDate() {
   let input = customerDateOfAppointment.value;
   if (input === "") {
     customerDateOfAppointment.style.borderColor = "red";
-  } else {
+    return false;
   }
 }
 
@@ -180,7 +182,7 @@ function checkAppointmentTime() {
   let input = customerTimeOfAppointment.value;
   if (input === "") {
     customerTimeOfAppointment.style.borderColor = "red";
-  } else {
+    return false;
   }
 }
 
@@ -188,7 +190,7 @@ function checkNote() {
   let input = breifNote.value;
   if (input === "") {
     breifNote.style.borderColor = "red";
-  } else {
+    return false;
   }
 }
 
@@ -203,55 +205,30 @@ function confirm() {
   checkAppointmentTime();
   checkNote();
 
-  // if (schedulePrice.includes(selectOpt.value)) {
-  //   console.log(schedulePrice, selectOpt.value);
-  // }
-
-  for (let key in schedulePrice) {
-    console.log(key + ": " + schedulePrice[key]);
-    // if (selectOpt.value == key){
-    if (key.includes(selectOpt.value)) {
-      console.log("correct!");
-      // console.log(selectOpt.value);
-    } else {
-      console.log(selectOpt.value);
+  if (
+    customerName.value == "" &&
+    customerPhoneNumber.value == "" &&
+    breifNote.value == "" &&
+    customerAddress.value == "" &&
+    customerEmail.value == "" &&
+    validateSelectedOption.value == "" &&
+    customerDateOfAppointment.value == "" &&
+    customerTimeOfAppointment.value == ""
+  ) {
+    return;
+  } else {
+    if (counsellorArr[0].numOfSelect <= 3) {
+      alert(
+        `Your appointment with ${
+          validateSelectedOption.value
+        } has been succesfully scheduled to be by ${
+          customerDateOfAppointment.value
+        } ${customerTimeOfAppointment.value}.Your Schedule session costs ${
+          schedulePrice[selectOpt.value]
+        }`
+      );
+    } else if (counsellorArr.numOfSelect >= 2) {
+      alert("That Counsellor is not available for now, \ntry again later!");
     }
-    // console.log("correct!");
   }
-
-  let successNote = `Your appointment with ${validateSelectedOption.value} has been succesfully scheduled to be by ${customerDateOfAppointment.value} ${customerTimeOfAppointment.value}.Your Schedule session costs ${schedulePrice}`;
-
-  console.log(successNote);
-
-  if (counsellorArr.numOfSelect <= 3) {
-    console.log(successNote);
-  }
-  // else if(all (counsellorArr.numOfSelect <= 3)){
-  //   console.log("No Counsellor is available for now, \ntry again later!");
-  // }
-  else if (counsellorArr.numOfSelect <= 3) {
-    console.log("No available slots for now!");
-  }
-
-  // if (counsellorArr.numOfSelect >= 3) {
-  //   lastPage.addClassList = "successful";
-  //   lastPage.textContent = `Your appointment with ${selectOpt.value}has been succesfully scheduled. By ${customerDateOfAppointment.value , customerTimeOfAppointment}. Your Schedule session costs ${schedulePrice}`;
-
-  //   console.log(counsellorArr);
-  //   console.log(lastPage.textContent);
-  // } else {
-  //   console.log(schedulePrice.career);
-  //   // window.location.href = 'index.html';
-  //   // lastPage.innerHTML = `schedulePrice`;
-  // }
-  // console.log(schedulePrice.career);
-  // console.log(selectOpt.value);
 }
-
-// for (const price of schedulePrice.length) {
-
-// }
-
-// console.log(schedulePrice["Change of profession"]);
-// console.log(schedulePrice.career);
-// console.log(selectOpt.textContent);

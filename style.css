@@ -133,3 +133,11 @@ textarea{
   font-size: 30px;
   padding-top: 200px;
 }
+
+.unsuccesful{
+  display: none;
+}
+
+.slots{
+  display: none;
+}
